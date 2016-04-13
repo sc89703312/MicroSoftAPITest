@@ -5,17 +5,17 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
+import MicroSoftAPITest.MicroSoftAPITest.common.ItemWithBound;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Region {
+public class Region extends ItemWithBound {
 
 	String boundingBox;
 
 	@JsonUnwrapped
 	List<Line> lines;
 
-//	public Region() {
-//		// TODO Auto-generated constructor stub
-//	}
+
 	public String getBoundingBox() {
 		return boundingBox;
 	}

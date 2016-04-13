@@ -5,17 +5,17 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class Line {
+import MicroSoftAPITest.MicroSoftAPITest.common.ItemWithBound;
 
-	String boundingBox;
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Line extends ItemWithBound {
+
+
 
 	@JsonUnwrapped
 	List<Word> words;
 
-//	public Line() {
-//		// TODO Auto-generated constructor stub
-//	}
+
 
 	public String getBoundingBox() {
 		return boundingBox;

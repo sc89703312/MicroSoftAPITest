@@ -62,7 +62,9 @@ public class FileToBytes {
          ByteArrayOutputStream imageStream = new ByteArrayOutputStream();
          try {
 
-             boolean resultWrite = ImageIO.write(bu, format, imageStream);
+             @SuppressWarnings("unused")
+			boolean resultWrite = ImageIO.write(bu, format, imageStream);
+
          } catch (Exception e) {
              e.printStackTrace();
          }

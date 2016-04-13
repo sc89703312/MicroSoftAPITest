@@ -2,15 +2,15 @@ package MicroSoftAPITest.MicroSoftAPITest.DTO;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import MicroSoftAPITest.MicroSoftAPITest.common.ItemWithBound;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Word {
+public class Word extends ItemWithBound{
 
 	String boundingBox;
 	String text;
 
-//	public Word() {
-//		// TODO Auto-generated constructor stub
-//	}
+
 	public String getBoundingBox() {
 		return boundingBox;
 	}
@@ -27,6 +27,7 @@ public class Word {
 	public String toString() {
 		return "Word [boundingBox=" + boundingBox + ", text=" + text + "]";
 	}
+
 
 
 }
