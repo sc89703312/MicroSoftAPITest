@@ -12,6 +12,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.AbstractHttpEntity;
+import org.apache.http.entity.ByteArrayEntity;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
@@ -32,7 +33,7 @@ public class OCRAuxliary {
 
 		builder = new URIBuilder("https://api.projectoxford.ai/vision/v1/ocr");
 
-        builder.setParameter("language", "en");
+        builder.setParameter("language", "unk");
 		builder.setParameter("detectOrientation ", "true");
 
 
@@ -53,19 +54,24 @@ public class OCRAuxliary {
 
 			String image_url = (String) args[0];
 			request.setHeader("Content-Type", "application/json");
-
-			entity = new StringEntity
-					("{'url':'" + image_url + "'}");
-
+			entity = new StringEntity("{'url':'" + image_url + "'}");
 			break;
 
-		case BYTES: break;
+		case BYTES:
+
+			byte[] img = (byte[]) args[0];
+			request.setHeader("Content-Type", "application/octet-stream");
+			entity = new ByteArrayEntity(img);
+			break;
 		}
 
 		return getReponse(entity);
 	}
 
 	public String getReponse(AbstractHttpEntity entity){
+
+		long start_time = System.currentTimeMillis();
+		System.out.println("Start once connect");
 
 		 request.setEntity(entity);
 		 String answer = "";
@@ -84,6 +90,9 @@ public class OCRAuxliary {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+
+		long end_time = System.currentTimeMillis();
+		System.out.println("This connection toke " + (end_time - start_time) +" ms");
 
 		return answer;
 	}
