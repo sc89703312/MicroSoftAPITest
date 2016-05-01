@@ -1,4 +1,4 @@
-package MicroSoftAPITest.MicroSoftAPITest.DTO;
+package MicroSoftAPITest.MicroSoftAPITest.DTO.OCRItem;
 
 import java.util.List;
 
@@ -7,15 +7,15 @@ import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Result {
+public class OCRResult {
 	private String language;
 	private String textAngle;
 	private String orientation;
 
 	@JsonUnwrapped
-	List<Region> regions;
+	List<OCRRegion> regions;
 
-	public Result() {
+	public OCRResult() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -37,10 +37,10 @@ public class Result {
 	public void setOrientation(String orientation) {
 		this.orientation = orientation;
 	}
-	public List<Region> getRegions() {
+	public List<OCRRegion> getRegions() {
 		return regions;
 	}
-	public void setRegions(List<Region> regions) {
+	public void setRegions(List<OCRRegion> regions) {
 		this.regions = regions;
 	}
 	@Override

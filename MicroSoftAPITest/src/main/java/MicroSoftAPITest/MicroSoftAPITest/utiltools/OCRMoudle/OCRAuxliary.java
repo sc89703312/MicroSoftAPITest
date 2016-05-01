@@ -1,4 +1,4 @@
-package MicroSoftAPITest.MicroSoftAPITest.utiltools;
+package MicroSoftAPITest.MicroSoftAPITest.utiltools.OCRMoudle;
 
 import java.io.IOException;
 import java.net.URI;

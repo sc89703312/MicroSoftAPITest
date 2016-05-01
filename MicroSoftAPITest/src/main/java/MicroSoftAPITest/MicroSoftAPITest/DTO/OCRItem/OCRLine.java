@@ -1,4 +1,4 @@
-package MicroSoftAPITest.MicroSoftAPITest.DTO;
+package MicroSoftAPITest.MicroSoftAPITest.DTO.OCRItem;
 
 import java.util.List;
 
@@ -8,12 +8,12 @@ import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import MicroSoftAPITest.MicroSoftAPITest.common.ItemWithBound;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Line extends ItemWithBound {
+public class OCRLine extends ItemWithBound {
 
 
 
 	@JsonUnwrapped
-	List<Word> words;
+	List<OCRWord> words;
 
 
 
@@ -23,10 +23,10 @@ public class Line extends ItemWithBound {
 	public void setBoundingBox(String boundingBox) {
 		this.boundingBox = boundingBox;
 	}
-	public List<Word> getWords() {
+	public List<OCRWord> getWords() {
 		return words;
 	}
-	public void setWords(List<Word> words) {
+	public void setWords(List<OCRWord> words) {
 		this.words = words;
 	}
 	@Override

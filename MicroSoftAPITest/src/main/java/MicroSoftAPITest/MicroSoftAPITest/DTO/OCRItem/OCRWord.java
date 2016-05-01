@@ -1,11 +1,11 @@
-package MicroSoftAPITest.MicroSoftAPITest.DTO;
+package MicroSoftAPITest.MicroSoftAPITest.DTO.OCRItem;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import MicroSoftAPITest.MicroSoftAPITest.common.ItemWithBound;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Word extends ItemWithBound{
+public class OCRWord extends ItemWithBound{
 
 	String boundingBox;
 	String text;

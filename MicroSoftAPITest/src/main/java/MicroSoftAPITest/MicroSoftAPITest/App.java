@@ -10,11 +10,11 @@ import java.util.Map;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import MicroSoftAPITest.MicroSoftAPITest.DTO.Result;
+import MicroSoftAPITest.MicroSoftAPITest.DTO.OCRItem.OCRResult;
 import MicroSoftAPITest.MicroSoftAPITest.common.OCRValueType;
-import MicroSoftAPITest.MicroSoftAPITest.utiltools.AnalyseJson;
 import MicroSoftAPITest.MicroSoftAPITest.utiltools.FileToBytes;
-import MicroSoftAPITest.MicroSoftAPITest.utiltools.OCRAuxliary;
+import MicroSoftAPITest.MicroSoftAPITest.utiltools.OCRMoudle.AnalyseJson;
+import MicroSoftAPITest.MicroSoftAPITest.utiltools.OCRMoudle.OCRAuxliary;
 
 
 
@@ -41,7 +41,7 @@ public class App
     	System.out.println(raw_data);
 
     	ObjectMapper mapper = new ObjectMapper();
-    	Result result = mapper.readValue(raw_data, Result.class);
+    	OCRResult result = mapper.readValue(raw_data, OCRResult.class);
     	System.out.println(result.toString());
 
     	Map<String, String> resultTemp = AnalyseJson.AnalyseResultObj(result);
